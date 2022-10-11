@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
 import '../Screen/dashboard.dart';
+
 import '../Screen/login_page.dart';
+import '../helper/shared_preference.dart';
 import 'WindowsSettingsFuntions.dart';
+
 ToastService? service;
+
 class HRMSWindows extends StatefulWidget {
-   HRMSWindows({Key? key}) : super(key: key);
+  HRMSWindows({Key? key}) : super(key: key);
 
   @override
   State<HRMSWindows> createState() => _HRMSWindowsState();
@@ -22,12 +26,11 @@ class _HRMSWindowsState extends State<HRMSWindows> with WindowListener {
       productName: 'HRMS',
     );
     WindowOptions windowOptions = WindowOptions(
-      //size: Size(1000, 700),
-      title: "HRMS",
-      center: true,
-      backgroundColor: Colors.transparent,
-      skipTaskbar: false
-    );
+        //size: Size(1000, 700),
+        title: "HRMS",
+        center: true,
+        backgroundColor: Colors.transparent,
+        skipTaskbar: false);
     windowManager.waitUntilReadyToShow(windowOptions, () async {
       await windowManager.setResizable(false);
       await windowManager.show();
@@ -54,16 +57,11 @@ class _HRMSWindowsState extends State<HRMSWindows> with WindowListener {
     setState(() {});
   }
 
-
-
-
   @override
   void onWindowClose() async {
     bool _isPreventClos = await windowManager.isPreventClose();
     if (_isPreventClos) {
-
       WindowsFuntion().onWindowClose();
-
 
       Toast toast = new Toast(
         type: ToastType.text02,
@@ -71,16 +69,26 @@ class _HRMSWindowsState extends State<HRMSWindows> with WindowListener {
         subtitle: 'HRMS App is Minimized',
       );
       service?.show(toast);
-
-
     }
   }
+
+  // navigate() async {
+  //   if (await StorageHelper.getBoolVal(StorageHelper.isUserLoggedIn) == true) {
+  //     Navigator.of(context).pushReplacement(MaterialPageRoute(
+  //       builder: (context) => const Dashboard(),
+  //     ));
+  //   } else {
+  //     Navigator.of(context).pushReplacement(MaterialPageRoute(
+  //         builder: (BuildContext context) => const LoginPage()));
+  //   }
+  // }
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage( ),
+      home: LoginPage(),
     );
   }
 }

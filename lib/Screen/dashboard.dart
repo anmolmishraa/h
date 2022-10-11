@@ -1,12 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:badges/badges.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screen_capturer/screen_capturer.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../DataList/list.dart';
 import '../const/const.dart';
 import '../widget/Custon_widget.dart';
@@ -29,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
   void initState() {
     // _handleClickCapture(CaptureMode.screen);
     super.initState();
-    const onemin = const Duration(seconds: 10);
+    const onemin = const Duration(minutes: 10);
     _timer = new Timer.periodic(
       onemin,
       (Timer timer) {
@@ -79,6 +78,15 @@ class _DashboardState extends State<Dashboard> {
     setState(() {});
   }
 
+  _launchURL() async {
+    const url = 'https://hrms.schedulesoftware.net/admin/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,24 +125,48 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ),
                         ),
-                        Text(
-                          ConstValue().userName,
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600),
+                        InkWell(
+                          onTap: () => _launchURL(),
+                          child: Text(
+                            ConstValue().userName,
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
+                          ),
                         )
                       ],
                     ),
 
                     /// Header button:-
                     Container(
-                      width: MediaQuery.of(context).size.width * .20,
+                      width: MediaQuery.of(context).size.width * .30,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           customButton(ConstValue().startBreak),
                           customButton(ConstValue().clockOut),
+                          GestureDetector(
+                            onTap: () => showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    titlePadding: EdgeInsets.only(
+                                        left:
+                                        MediaQuery.of(context).size.width * .2,
+                                        right:
+                                        MediaQuery.of(context).size.width * .2,
+                                        top: 10),
+                                    title: Center(
+                                        child: Text(
+                                          ConstValue().leave,
+                                          style: TextStyle(color: Colors.blueAccent),
+                                        )),
+                                    content: leavedownlist(),
+                                  );
+                                }),
+                            child:customButton(ConstValue().leave),
+                          )
                         ],
                       ),
                     ),
