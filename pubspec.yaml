@@ -50,6 +50,10 @@ dependencies:
   url_launcher:
   http:
   shared_preferences:
+  flutter_animated_dialog:
+  package_info_plus:
+
+
 
 
 

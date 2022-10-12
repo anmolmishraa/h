@@ -19,7 +19,7 @@ class leavedata{
       "leaveReason": 'Going to out of satus',
       "leaveDate": '12-10-2022',
       "leaveApplyDate": '10-08-2022',
-      "leaveComment": 'Leave approved',
+      "leaveComment": 'Leave Pending',
 
     },
     {
@@ -52,7 +52,7 @@ class leavedata{
       "leaveReason": 'Going to out of satus',
       "leaveDate": '17-11-2022',
       "leaveApplyDate": '10-10-2022',
-      "leaveComment": 'Leave approved',
+      "leaveComment": 'Leave cancel',
 
     },
     {

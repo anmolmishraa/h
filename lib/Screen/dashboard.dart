@@ -28,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
   void initState() {
     // _handleClickCapture(CaptureMode.screen);
     super.initState();
-    const onemin = const Duration(minutes: 10);
+    const onemin = const Duration(minutes: 1);
     _timer = new Timer.periodic(
       onemin,
       (Timer timer) {

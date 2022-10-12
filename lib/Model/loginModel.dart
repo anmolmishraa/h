@@ -21,12 +21,12 @@
 //   }
 // }
 class LoginResponseDone {
-  int ?status;
-  int ?statusCode;
-  String ?message;
-  Data ?data;
+  int? status;
+  int? statusCode;
+  String? message;
+  Data? data;
 
-  LoginResponseDone({this.status, this.statusCode, this.data,this.message});
+  LoginResponseDone({this.status, this.statusCode, this.data, this.message});
 
   LoginResponseDone.fromJson(Map<String, dynamic> json) {
     status = json['status'];
@@ -48,10 +48,10 @@ class LoginResponseDone {
 }
 
 class Data {
-  String ?appToken;
-  UserData ?userData;
+  String? appToken;
+  UserData? userData;
   List<void>? attendanceData;
-  BasicInfo ?basicInfo;
+  BasicInfo? basicInfo;
 
   Data({this.appToken, this.userData, this.attendanceData, this.basicInfo});
 
@@ -90,177 +90,177 @@ class Data {
 
 class UserData {
   int? userId;
-  int ?employeeId;
-  int ?biometricId;
-  int ?officeShiftId;
-  int ?teamHeadId;
+  int? employeeId;
+  int? biometricId;
+  int? officeShiftId;
+  int? teamHeadId;
   String? firstName;
-  String ?lastName;
-  String ?username;
-  String ?email;
-  String ?password;
-  int ?tempPass;
+  String? lastName;
+  String? username;
+  String? email;
+  String? password;
+  int? tempPass;
   String? dateOfBirth;
-  String ?gender;
-  int ?eStatus;
-  int ?userRoleId;
-  int ?outsourcing;
-  int ?departmentId;
-  int ?subDepartmentId;
-  int ?designationId;
-  int ?companyId;
-  int ?locationId;
-  int ?viewCompaniesId;
+  String? gender;
+  int? eStatus;
+  int? userRoleId;
+  int? outsourcing;
+  int? departmentId;
+  int? subDepartmentId;
+  int? designationId;
+  int? companyId;
+  int? locationId;
+  int? viewCompaniesId;
   String? salaryTemplate;
   int? hourlyGradeId;
-  int ?monthlyGradeId;
+  int? monthlyGradeId;
   String? dateOfJoining;
-  String ?dateOfLeaving;
-  String ?maritalStatus;
-  String ?salary;
-  int ?wagesType;
-  int ?gradeId;
-  int ?basicSalary;
-  int ?currentCtc;
-  int ?pfStatus;
-  int ?pfBasic;
+  String? dateOfLeaving;
+  String? maritalStatus;
+  String? salary;
+  int? wagesType;
+  int? gradeId;
+  int? basicSalary;
+  int? currentCtc;
+  int? pfStatus;
+  int? pfBasic;
   String? pfNumber;
-  int ?dailyWages;
-  int ?salarySsempee;
-  int ?salarySsempeer;
-  int ?salaryIncomeTax;
-  int ?salaryOvertime;
-  int ?salaryCommission;
-  int ?salaryClaims;
-  int ?salaryPaidLeave;
-  int ?salaryDirectorFees;
-  int ?salaryBonus;
-  int ?salaryAdvancePaid;
+  int? dailyWages;
+  int? salarySsempee;
+  int? salarySsempeer;
+  int? salaryIncomeTax;
+  int? salaryOvertime;
+  int? salaryCommission;
+  int? salaryClaims;
+  int? salaryPaidLeave;
+  int? salaryDirectorFees;
+  int? salaryBonus;
+  int? salaryAdvancePaid;
   String? address;
-  String ?state;
-  String ?city;
-  int ?zipcode;
+  String? state;
+  String? city;
+  int? zipcode;
   String? profilePicture;
   String? profileBackground;
-  Null ?trackerBackgroundImg;
+  Null? trackerBackgroundImg;
   String? resume;
-  String ?skypeId;
-  int ?contactNo;
+  String? skypeId;
+  int? contactNo;
   String? facebookLink;
-  String ?twitterLink;
-  String ?bloggerLink;
-  String ?linkdedinLink;
-  String ?googlePlusLink;
-  String ?instagramLink;
-  String ?pinterestLink;
-  String ?youtubeLink;
+  String? twitterLink;
+  String? bloggerLink;
+  String? linkdedinLink;
+  String? googlePlusLink;
+  String? instagramLink;
+  String? pinterestLink;
+  String? youtubeLink;
   int? isActive;
   String? lastLoginDate;
-  String ?lastLogoutDate;
-  String ?lastLoginIp;
-  int ?isLoggedIn;
-  int ?onlineStatus;
-  String ?fixedHeader;
-  String ?compactSidebar;
-  String ?boxedWrapper;
-  String ?leaveCategories;
-  String ?leaveStartMonth;
-  String ?createdAt;
-  String ?officeShiftName;
-  String ?teamHeadName;
-  String ?userRoleName;
-  String ?departmentName;
-  String ?designationName;
-  String ?companyName;
-  String ?locationName;
-  String ?gradeName;
+  String? lastLogoutDate;
+  String? lastLoginIp;
+  int? isLoggedIn;
+  int? onlineStatus;
+  String? fixedHeader;
+  String? compactSidebar;
+  String? boxedWrapper;
+  String? leaveCategories;
+  String? leaveStartMonth;
+  String? createdAt;
+  String? officeShiftName;
+  String? teamHeadName;
+  String? userRoleName;
+  String? departmentName;
+  String? designationName;
+  String? companyName;
+  String? locationName;
+  String? gradeName;
 
   UserData(
       {this.userId,
-        this.employeeId,
-        this.biometricId,
-        this.officeShiftId,
-        this.teamHeadId,
-        this.firstName,
-        this.lastName,
-        this.username,
-        this.email,
-        this.password,
-        this.tempPass,
-        this.dateOfBirth,
-        this.gender,
-        this.eStatus,
-        this.userRoleId,
-        this.outsourcing,
-        this.departmentId,
-        this.subDepartmentId,
-        this.designationId,
-        this.companyId,
-        this.locationId,
-        this.viewCompaniesId,
-        this.salaryTemplate,
-        this.hourlyGradeId,
-        this.monthlyGradeId,
-        this.dateOfJoining,
-        this.dateOfLeaving,
-        this.maritalStatus,
-        this.salary,
-        this.wagesType,
-        this.gradeId,
-        this.basicSalary,
-        this.currentCtc,
-        this.pfStatus,
-        this.pfBasic,
-        this.pfNumber,
-        this.dailyWages,
-        this.salarySsempee,
-        this.salarySsempeer,
-        this.salaryIncomeTax,
-        this.salaryOvertime,
-        this.salaryCommission,
-        this.salaryClaims,
-        this.salaryPaidLeave,
-        this.salaryDirectorFees,
-        this.salaryBonus,
-        this.salaryAdvancePaid,
-        this.address,
-        this.state,
-        this.city,
-        this.zipcode,
-        this.profilePicture,
-        this.profileBackground,
-        this.trackerBackgroundImg,
-        this.resume,
-        this.skypeId,
-        this.contactNo,
-        this.facebookLink,
-        this.twitterLink,
-        this.bloggerLink,
-        this.linkdedinLink,
-        this.googlePlusLink,
-        this.instagramLink,
-        this.pinterestLink,
-        this.youtubeLink,
-        this.isActive,
-        this.lastLoginDate,
-        this.lastLogoutDate,
-        this.lastLoginIp,
-        this.isLoggedIn,
-        this.onlineStatus,
-        this.fixedHeader,
-        this.compactSidebar,
-        this.boxedWrapper,
-        this.leaveCategories,
-        this.leaveStartMonth,
-        this.createdAt,
-        this.officeShiftName,
-        this.teamHeadName,
-        this.userRoleName,
-        this.departmentName,
-        this.designationName,
-        this.companyName,
-        this.locationName,
-        this.gradeName});
+      this.employeeId,
+      this.biometricId,
+      this.officeShiftId,
+      this.teamHeadId,
+      this.firstName,
+      this.lastName,
+      this.username,
+      this.email,
+      this.password,
+      this.tempPass,
+      this.dateOfBirth,
+      this.gender,
+      this.eStatus,
+      this.userRoleId,
+      this.outsourcing,
+      this.departmentId,
+      this.subDepartmentId,
+      this.designationId,
+      this.companyId,
+      this.locationId,
+      this.viewCompaniesId,
+      this.salaryTemplate,
+      this.hourlyGradeId,
+      this.monthlyGradeId,
+      this.dateOfJoining,
+      this.dateOfLeaving,
+      this.maritalStatus,
+      this.salary,
+      this.wagesType,
+      this.gradeId,
+      this.basicSalary,
+      this.currentCtc,
+      this.pfStatus,
+      this.pfBasic,
+      this.pfNumber,
+      this.dailyWages,
+      this.salarySsempee,
+      this.salarySsempeer,
+      this.salaryIncomeTax,
+      this.salaryOvertime,
+      this.salaryCommission,
+      this.salaryClaims,
+      this.salaryPaidLeave,
+      this.salaryDirectorFees,
+      this.salaryBonus,
+      this.salaryAdvancePaid,
+      this.address,
+      this.state,
+      this.city,
+      this.zipcode,
+      this.profilePicture,
+      this.profileBackground,
+      this.trackerBackgroundImg,
+      this.resume,
+      this.skypeId,
+      this.contactNo,
+      this.facebookLink,
+      this.twitterLink,
+      this.bloggerLink,
+      this.linkdedinLink,
+      this.googlePlusLink,
+      this.instagramLink,
+      this.pinterestLink,
+      this.youtubeLink,
+      this.isActive,
+      this.lastLoginDate,
+      this.lastLogoutDate,
+      this.lastLoginIp,
+      this.isLoggedIn,
+      this.onlineStatus,
+      this.fixedHeader,
+      this.compactSidebar,
+      this.boxedWrapper,
+      this.leaveCategories,
+      this.leaveStartMonth,
+      this.createdAt,
+      this.officeShiftName,
+      this.teamHeadName,
+      this.userRoleName,
+      this.departmentName,
+      this.designationName,
+      this.companyName,
+      this.locationName,
+      this.gradeName});
 
   UserData.fromJson(Map<String, dynamic> json) {
     userId = json['user_id'];
@@ -442,36 +442,36 @@ class UserData {
 }
 
 class BasicInfo {
-  int ? employeeId;
+  int? employeeId;
   String? firstName;
-  String ?lastName;
-  String ?email;
-  String ?dateOfBirth;
-  String ?gender;
-  String ?maritalStatus;
-  int ?contactNo;
-  String ?address;
-  String ?profilePicture;
-  int ?designationId;
+  String? lastName;
+  String? email;
+  String? dateOfBirth;
+  String? gender;
+  String? maritalStatus;
+  int? contactNo;
+  String? address;
+  String? profilePicture;
+  int? designationId;
   String? designationName;
-  int ?teamHeadId;
-  String ?teamHeadName;
+  int? teamHeadId;
+  String? teamHeadName;
 
   BasicInfo(
       {this.employeeId,
-        this.firstName,
-        this.lastName,
-        this.email,
-        this.dateOfBirth,
-        this.gender,
-        this.maritalStatus,
-        this.contactNo,
-        this.address,
-        this.profilePicture,
-        this.designationId,
-        this.designationName,
-        this.teamHeadId,
-        this.teamHeadName});
+      this.firstName,
+      this.lastName,
+      this.email,
+      this.dateOfBirth,
+      this.gender,
+      this.maritalStatus,
+      this.contactNo,
+      this.address,
+      this.profilePicture,
+      this.designationId,
+      this.designationName,
+      this.teamHeadId,
+      this.teamHeadName});
 
   BasicInfo.fromJson(Map<String, dynamic> json) {
     employeeId = json['employee_id'];

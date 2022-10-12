@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:intl/intl.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
@@ -590,9 +591,31 @@ Widget customButton(String text) {
     ),
   );
 }
+Widget leaveButton(String text) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Container(
+      height: 38,
+      width: 110,
+      child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+                color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+          )),
+      decoration: BoxDecoration(
+        color: Colors.blueAccent,
+        borderRadius: BorderRadius.all(
+            Radius.circular(5.0) //                 <--- border radius here
+        ),
+      ),
+    ),
+  );
+}
 
 class CustomLoginCard extends StatefulWidget {
-  CustomLoginCard({Key? key}) : super(key: key);
+  final String ?backgroundImage;
+  CustomLoginCard({Key? key,this.backgroundImage}) : super(key: key);
 
   @override
   State<CustomLoginCard> createState() => _CustomLoginCardState();
@@ -649,14 +672,21 @@ class _CustomLoginCardState extends State<CustomLoginCard> {
     });
   }
 
-  Future<void> _displayTextInputDialog(BuildContext context, text) async {
-    return showDialog(
+
+  Future<Future<Object?>> _displayTextInputDialog(BuildContext context, text) async {
+    return showAnimatedDialog(
+
       context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(text),
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return ClassicGeneralDialogWidget(
+          titleText: text,
+
         );
       },
+      animationType: DialogTransitionType.slideFromTop,
+      curve: Curves.fastOutSlowIn,
+      duration: Duration(seconds: 1),
     );
   }
 
@@ -677,27 +707,32 @@ class _CustomLoginCardState extends State<CustomLoginCard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            RichText(
-              text: TextSpan(
-                text: ConstValue().companyNameTechno,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 35,
-                  color: Colors.black,
-                  decoration: TextDecoration.underline,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
-                      text: ConstValue().companyNameBrains,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 35,
-                        color: Colors.red,
-                        decoration: TextDecoration.underline,
-                      )),
-                ],
-              ),
-            ),
+            // RichText(
+            //   text: TextSpan(
+            //     text: ConstValue().companyNameTechno,
+            //     style: TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //       fontSize: 35,
+            //       color: Colors.black,
+            //       decoration: TextDecoration.underline,
+            //     ),
+            //     children: <TextSpan>[
+            //       TextSpan(
+            //           text: ConstValue().companyNameBrains,
+            //           style: TextStyle(
+            //             fontWeight: FontWeight.bold,
+            //             fontSize: 35,
+            //             color: Colors.red,
+            //             decoration: TextDecoration.underline,
+            //           )),
+            //     ],
+            //   ),
+            // ),
+            widget.backgroundImage==null?
+            Container():Container(
+                width: MediaQuery.of(context).size.width * .28,
+                height: MediaQuery.of(context).size.height * .2,
+                child: Image.network("${widget.backgroundImage}")),
             Container(
                 margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                 child: TextFormField(
@@ -1493,6 +1528,11 @@ class _leavedownlistState extends State<leavedownlist> {
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
+                        leaveStatus=="2"?
+                        leaveButton("Approved"):Container(),
+                        leaveStatus=="2"?
+                        leaveButton("cancel"):Container(),
+
                       ],
                     ),
                   ],

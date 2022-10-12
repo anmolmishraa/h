@@ -66,6 +66,7 @@ class ApiConstant {
   static String postMethod = "post";
   static String putMethod = "put";
   static String login = "auth/login";
+  static String appInfo = "auth/app_info";
   static String sendForgotPassword = "";
   static String resetPassword = "";
   static String refreshToken = "";
